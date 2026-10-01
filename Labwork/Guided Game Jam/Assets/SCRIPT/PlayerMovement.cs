@@ -1,4 +1,7 @@
+using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class player_movement : MonoBehaviour
 {
@@ -14,7 +17,9 @@ public class player_movement : MonoBehaviour
     private float fireCooldown = 0.3f; //Forces the player to wait 0.3 seconds between firing bullets
     private float sinceFire = 0f;
     public Animator animations;
-
+    public InputActionReference move;
+    public InputActionReference attack;
+    private Vector2 _moveDirection;
 
     void Awake() => rb = GetComponent<Rigidbody2D>();
 
@@ -25,10 +30,8 @@ public class player_movement : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    { 
-        xInput = Input.GetAxisRaw("Horizontal");
-        yInput = Input.GetAxisRaw("Vertical");
-        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
+    {
+        if(attack.action.triggered)
         {
             if (canFire == true)
             {
@@ -48,26 +51,28 @@ public class player_movement : MonoBehaviour
                 canFire = true;
             }
         }
+        _moveDirection = move.action.ReadValue<Vector2>();
     }
 
     void FixedUpdate()
     {
-        rb.linearVelocity = new Vector2(yInput * verticalSpeed, rb.linearVelocity.y); //Allows for horizontal movement
-        rb.linearVelocity = new Vector2(xInput * horizontalSpeed, rb.linearVelocity.x); //Allows for horizontal movement
         //Help with code for setting animations comes from https://www.youtube.com/watch?v=AdQz2wStdLY&t=1s
-        if (yInput > 0) 
+        rb.linearVelocity = new Vector2(_moveDirection.x * horizontalSpeed, _moveDirection.y * verticalSpeed);
+        if (_moveDirection.y > 0) 
         {
-            animations.SetBool("moving_up", true);
+        animations.SetBool("moving_up", true);
         }
-        if (yInput < 0)
+        if (_moveDirection.y < 0)
         {
-            animations.SetBool("moving_down", true);
+        animations.SetBool("moving_down", true);
         }
-        if (yInput == 0)
+        if (_moveDirection.y == 0)
         {
-            animations.SetBool("moving_up", false);
-            animations.SetBool("moving_down", false);
+        animations.SetBool("moving_up", false);
+        animations.SetBool("moving_down", false);
         }
         //These sets of if statements check if the player is ascending, descending or only moving horizontally to determine which animations to use
     }
+
+
 }
