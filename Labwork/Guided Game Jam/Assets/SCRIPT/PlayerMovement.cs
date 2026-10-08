@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.EnhancedTouch;
 using UnityEngine.UI;
 
 public class player_movement : MonoBehaviour
@@ -21,7 +22,10 @@ public class player_movement : MonoBehaviour
     public InputActionReference attack;
     private Vector2 _moveDirection;
 
+
+
     void Awake() => rb = GetComponent<Rigidbody2D>();
+
 
     void Start()
     {
