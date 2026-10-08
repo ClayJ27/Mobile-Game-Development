@@ -1,0 +1,5 @@
+control scheme: swipe to move
+start condition: starts when the finger enters the screen
+update behaviour: records the direction the finger is swiping
+success behaviour: Rocket moves up when finger swipes up moves down when swiped down, left when swiped left and right when swiped right
+cancel behaviour: stops when finger leaves the screen or app is interrupted
