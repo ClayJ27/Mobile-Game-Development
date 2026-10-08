@@ -32,6 +32,7 @@ public class TiltSteering : MonoBehaviour
         if (Accelerometer.current == null) return 0f;
         float x = Accelerometer.current.acceleration.ReadValue().x - neutral.x;
         if (Mathf.Abs(x) < deadZone) x = 0f;
+        Debug.Log(Mathf.Clamp(x * sensitivity, -1f, 1f));
         return Mathf.Clamp(x * sensitivity, -1f, 1f);
     }
 
