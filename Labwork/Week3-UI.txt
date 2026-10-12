@@ -1,5 +1,7 @@
 Score - TextMeshPro text at the top left of the screen as the information provided by it is only to be glanced at and doesn't need to be focused on all the time, tells the player how many points they've earned by defeating enemies
 Pause button - Button located toward the top right of the screen as the player only needs to be looking at it when they are thinking about pressing it and so it shouldn't block any game content, allows the player to pause the game mid-session
 Movement controls - On-screen stick located towards the bottom left of the screen to allow for easy thumb access on the player's side of the screen without blocking any enemies, allows the rocket to move in all directions
-Shooting controls - Activated whenever the screen is tapped, this allows the player to tap where ever they want, as long as it isn't over another UI element, without any screen space being taken by a button, allows the player to fire a bullet
+Shooting controls - Button located towards the bottom right of the screen but not too far right as to not block incoming enemy spawns, allows the player to fire a bullet
 Restart controls - Button located toward the top right of the screen as the player only needs to be looking at it when they are thinking about pressing it and so it shouldn't block any game content, allows the player to restart the game at any time
+Pause menu - Lists resume button and restart button located in the middle of the screen for easy access but only active when the game is paused, performs the listed action when tapped
+Health - Heart icons located towards the top right so it can quickly be glanced at without blocking active gameplay, displays remaining health

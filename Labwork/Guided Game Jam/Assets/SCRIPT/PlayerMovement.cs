@@ -80,6 +80,7 @@ public class player_movement : MonoBehaviour
         {
             if (paused == false)
             {
+                canFire = false;
                 paused = true;
             }
             else
