@@ -22,7 +22,10 @@ public class player_movement : MonoBehaviour
     public InputActionReference move;
     public InputActionReference attack;
     public InputActionReference restart;
+    public InputActionReference pause;
     private Vector2 _moveDirection;
+    public GameObject pauseMenu;
+    bool paused;
 
 
 
@@ -32,11 +35,22 @@ public class player_movement : MonoBehaviour
     void Start()
     {
         canFire = true; //Player is able to shoot the frame the game starts
+        paused = false; //starts the game unpaused
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (paused == true)
+        {
+            pauseMenu.SetActive(true);
+            Time.timeScale = 0;
+        }
+        else
+        {
+            pauseMenu.SetActive(false);
+            Time.timeScale = 1;
+        }
         if(attack.action.triggered)
         {
             if (canFire == true)
@@ -61,6 +75,17 @@ public class player_movement : MonoBehaviour
         if (restart.action.triggered)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); //Reloads the game when restart button is pressed
+        }
+        if (pause.action.triggered)
+        {
+            if (paused == false)
+            {
+                paused = true;
+            }
+            else
+            {
+                paused = false;
+            }
         }
     }
 
