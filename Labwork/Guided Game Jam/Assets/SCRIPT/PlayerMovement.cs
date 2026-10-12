@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.EnhancedTouch;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class player_movement : MonoBehaviour
@@ -20,6 +21,7 @@ public class player_movement : MonoBehaviour
     public Animator animations;
     public InputActionReference move;
     public InputActionReference attack;
+    public InputActionReference restart;
     private Vector2 _moveDirection;
 
 
@@ -56,6 +58,10 @@ public class player_movement : MonoBehaviour
             }
         }
         _moveDirection = move.action.ReadValue<Vector2>();
+        if (restart.action.triggered)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); //Reloads the game when restart button is pressed
+        }
     }
 
     void FixedUpdate()
