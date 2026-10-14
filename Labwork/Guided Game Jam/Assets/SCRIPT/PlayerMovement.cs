@@ -25,6 +25,7 @@ public class player_movement : MonoBehaviour
     public InputActionReference pause;
     private Vector2 _moveDirection;
     public GameObject pauseMenu;
+    public GameObject buttonDisplay;
     bool paused;
 
 
@@ -44,11 +45,13 @@ public class player_movement : MonoBehaviour
         if (paused == true)
         {
             pauseMenu.SetActive(true);
+            buttonDisplay.SetActive(false);
             Time.timeScale = 0;
         }
         else
         {
             pauseMenu.SetActive(false);
+            buttonDisplay.SetActive(true);
             Time.timeScale = 1;
         }
         if(attack.action.triggered)
