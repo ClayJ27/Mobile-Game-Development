@@ -23,10 +23,15 @@ public class player_movement : MonoBehaviour
     public InputActionReference attack;
     public InputActionReference restart;
     public InputActionReference pause;
+    public InputActionReference menu;
+    public InputActionReference close; //Closing the pause menu
+
     private Vector2 _moveDirection;
     public GameObject pauseMenu;
+    public GameObject settingsMenu;
     public GameObject buttonDisplay;
     bool paused;
+    bool menuOpen;
 
 
 
@@ -37,6 +42,7 @@ public class player_movement : MonoBehaviour
     {
         canFire = true; //Player is able to shoot the frame the game starts
         paused = false; //starts the game unpaused
+        menuOpen = false; //starts the game with the settings menu closed
     }
 
     // Update is called once per frame
@@ -54,7 +60,19 @@ public class player_movement : MonoBehaviour
             buttonDisplay.SetActive(true);
             Time.timeScale = 1;
         }
-        if(attack.action.triggered)
+        if (menuOpen == true)
+        {
+            settingsMenu.SetActive(true);
+            buttonDisplay.SetActive(false);
+            Time.timeScale = 0;
+        }
+        else
+        {
+            settingsMenu.SetActive(false);
+            buttonDisplay.SetActive(true);
+            Time.timeScale = 1;
+        }
+        if (attack.action.triggered)
         {
             if (canFire == true)
             {
@@ -83,13 +101,20 @@ public class player_movement : MonoBehaviour
         {
             if (paused == false)
             {
-                canFire = false;
                 paused = true;
             }
             else
             {
                 paused = false;
             }
+        }
+        if (menu.action.triggered)
+        {
+            menuOpen = true;
+        }
+        if (close.action.triggered)
+        {
+            menuOpen = false;
         }
     }
 
