@@ -21,7 +21,7 @@ public class PlayerTracking : MonoBehaviour
     {
         if (this.gameObject.transform.position.x <= -10 || this.gameObject.transform.position.x >= 10 || this.gameObject.transform.position.y <= -10 || this.gameObject.transform.position.y >= 10) // Destroying the bullet when it's off screen
         {
-            Destroy(this.gameObject);
+            this.gameObject.SetActive(false);
         }
     }
 
@@ -29,7 +29,7 @@ public class PlayerTracking : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Destroy(this.gameObject);
+            this.gameObject.SetActive(false);
         }
     }
 }

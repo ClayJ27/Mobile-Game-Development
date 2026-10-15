@@ -44,12 +44,12 @@ public class EnemyStats : MonoBehaviour
 
         if (this.gameObject.transform.position.x <= -10) // Destroying enemy when off screen
         {
-            Destroy(this.gameObject);
+            this.gameObject.SetActive(false);
         }
 
         if (health <= 0)
         {
-            Destroy(this.gameObject);
+            this.gameObject.SetActive(false);
             enemyScore.EnemyDeath();
             Instantiate(deathExplosion, transform.position, Quaternion.identity);
             if (bossSpawning.isBossActive == false)
@@ -63,13 +63,13 @@ public class EnemyStats : MonoBehaviour
     {
         if (other.CompareTag("Player")) // Destroy enemy when colliding with player
         {
-            Destroy(this.gameObject);
+            this.gameObject.SetActive(false);
             enemyScore.EnemyDeath();
         }
         if (other.CompareTag("PlayerBullet")) // Decrease health if shot by player
         {
             health--;
-            Destroy(other.gameObject);
+            other.gameObject.SetActive(false);
         }
     }
 }

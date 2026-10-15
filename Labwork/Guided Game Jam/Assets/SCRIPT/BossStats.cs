@@ -66,7 +66,7 @@ public class BossStats : MonoBehaviour
     {
         if (health <= 0)
         {
-            Destroy(this.gameObject);
+            this.gameObject.SetActive(false);
             bossScore.BossDeath();
             Instantiate(bossDeathExplosion, transform.position, Quaternion.identity);
             bossOnScreen.isBossActive = false;
@@ -82,7 +82,7 @@ public class BossStats : MonoBehaviour
         if (other.CompareTag("PlayerBullet"))
         {
             health--;
-            Destroy(other.gameObject);
+            other.gameObject.SetActive(false);
         }
     }
 }
