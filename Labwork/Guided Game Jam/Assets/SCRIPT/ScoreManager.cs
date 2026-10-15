@@ -5,6 +5,7 @@ public class ScoreManager : MonoBehaviour
 {
     public long score = 0;
     public TextMeshProUGUI scoreText;
+    public GameObject test;
 
     public void EnemyDeath()
     {
@@ -25,5 +26,6 @@ public class ScoreManager : MonoBehaviour
     void Update()
     {
         scoreText.text = "Score: " + score;
+        Destroy(test);
     }
 }
