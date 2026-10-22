@@ -3349,52 +3349,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   playerDeathExplosion: {fileID: 1960597842990600493, guid: 0050b5c14a3eea642aa619e44ecd1d65, type: 3}
---- !u!95 &1065151680 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 3840688680662462934, guid: 10db1302b3e7abe4d9a8f916544347b8, type: 3}
-  m_PrefabInstance: {fileID: 1310788575}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1065151685
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 257195755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e8313756265fe84f981da437626341a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TiltSteering
-  deadZone: 0.05
-  sensitivity: 2
-  horizontalSpeed: 5
-  verticalSpeed: 5
-  animations: {fileID: 1065151680}
---- !u!114 &1065151686
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 257195755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f657e401f808fa34fa6af06210f9e2ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SwpeDetector
---- !u!114 &1065151691
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 257195755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd11879eadb3c224e8f75e23b1a095ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TouchExample
 --- !u!1 &1134354391
 GameObject:
   m_ObjectHideFlags: 0
@@ -4111,15 +4065,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2268950334564367143, guid: 10db1302b3e7abe4d9a8f916544347b8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1065151679}
-    - targetCorrespondingSourceObject: {fileID: 2268950334564367143, guid: 10db1302b3e7abe4d9a8f916544347b8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1065151685}
-    - targetCorrespondingSourceObject: {fileID: 2268950334564367143, guid: 10db1302b3e7abe4d9a8f916544347b8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1065151686}
-    - targetCorrespondingSourceObject: {fileID: 2268950334564367143, guid: 10db1302b3e7abe4d9a8f916544347b8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1065151691}
   m_SourcePrefab: {fileID: 100100000, guid: 10db1302b3e7abe4d9a8f916544347b8, type: 3}
 --- !u!1 &1355041924
 GameObject:
