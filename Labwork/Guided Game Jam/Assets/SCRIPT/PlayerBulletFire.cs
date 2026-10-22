@@ -8,11 +8,14 @@ public class PlayerBulletTest : MonoBehaviour
     void BulletMovement()
     {
         bulletRB.transform.Translate(new Vector2(bulletSpeed, 0f) * Time.deltaTime);
+        Debug.Log("Bullet moving");
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         bulletRB = GetComponent<Rigidbody2D>();
+        Debug.Log("Bullet starting");
+
     }
 
     // Update is called once per frame
@@ -24,5 +27,6 @@ public class PlayerBulletTest : MonoBehaviour
     private void OnBecameInvisible()
     {
         this.gameObject.SetActive(false);
+        Debug.Log("Bullet invisible");
     }
 }

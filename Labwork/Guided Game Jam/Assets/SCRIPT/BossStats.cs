@@ -19,6 +19,7 @@ public class BossStats : MonoBehaviour
 
     IEnumerator BossMovement()
     {
+        Debug.Log("Boss moving");
         bossRB = GetComponent<Rigidbody2D>();
         bossRB.linearVelocityY = movementSpeed;
         yield return new WaitUntil(() => this.gameObject.transform.position.y >= 2.5);
@@ -29,6 +30,7 @@ public class BossStats : MonoBehaviour
 
     IEnumerator BossMainAttack()
     {
+        Debug.Log("Boss attack");
         yield return new WaitForSeconds(mainAttackSpeed);
         float bulletPosX = transform.position.x - 1;
         float topBulletPosY = transform.position.y + 2;
@@ -44,6 +46,7 @@ public class BossStats : MonoBehaviour
 
     IEnumerator BossSecondAttack()
     {
+        Debug.Log("Boss attack");
         yield return new WaitForSeconds(secondaryAttackSpeed);
         float homingBulletPosY = transform.position.y - 2;
         Vector2 homingBulletPos = new Vector2(transform.position.x, homingBulletPosY);
@@ -54,6 +57,7 @@ public class BossStats : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Debug.Log("Boss start");
         StartCoroutine(BossMovement());
         StartCoroutine(BossMainAttack());
         StartCoroutine(BossSecondAttack());
@@ -66,6 +70,7 @@ public class BossStats : MonoBehaviour
     {
         if (health <= 0)
         {
+            Debug.Log("Boss defeated");
             this.gameObject.SetActive(false);
             bossScore.BossDeath();
             Instantiate(bossDeathExplosion, transform.position, Quaternion.identity);
@@ -77,10 +82,12 @@ public class BossStats : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log("Boss damaged");
             health--;
         }
         if (other.CompareTag("PlayerBullet"))
         {
+            Debug.Log("Boss damaged");
             health--;
             other.gameObject.SetActive(false);
         }

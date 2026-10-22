@@ -10,6 +10,7 @@ public class PlayerTracking : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Debug.Log("Projectile starting");
         bulletRB = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
         Vector2 moveDir = (player.transform.position - transform.position).normalized * bulletSpeed; // Tracks where the player is compared to the enemy
@@ -19,6 +20,7 @@ public class PlayerTracking : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("Projectile moving");
         if (this.gameObject.transform.position.x <= -10 || this.gameObject.transform.position.x >= 10 || this.gameObject.transform.position.y <= -10 || this.gameObject.transform.position.y >= 10) // Destroying the bullet when it's off screen
         {
             this.gameObject.SetActive(false);
@@ -29,6 +31,7 @@ public class PlayerTracking : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log("Disable projectile");
             this.gameObject.SetActive(false);
         }
     }
