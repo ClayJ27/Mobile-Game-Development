@@ -35,11 +35,13 @@ public class player_movement : MonoBehaviour
     {
         //paused = false; //starts the game unpaused
         //menuOpen = false; //starts the game with the settings menu closed
+        verticalSpeed = 0.000000001f;
     }
 
     // Update is called once per frame
     void Update()
     {
+        verticalSpeed = 0.000000001f;
         //if (paused == true)
         //{
         //pauseMenu.SetActive(true);
@@ -95,6 +97,7 @@ public class player_movement : MonoBehaviour
     {
         //Help with code for setting animations comes from https://www.youtube.com/watch?v=AdQz2wStdLY&t=1s
         rb.linearVelocity = new Vector2(_moveDirection.x * horizontalSpeed, _moveDirection.y * verticalSpeed);
+        transform.Translate(0, 1, 0 * verticalSpeed * Time.deltaTime);
 
     }
 
