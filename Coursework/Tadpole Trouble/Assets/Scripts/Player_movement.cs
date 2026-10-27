@@ -9,12 +9,13 @@ public class player_movement : MonoBehaviour
 {
     public float horizontalSpeed;
     public float verticalSpeed;
+    public float automaticSpeed;
     Rigidbody2D rb;
     float xInput;
     float yInput;
     //public Animator animations;
     public InputActionReference move;
-    //public InputActionReference attack;
+    public InputActionReference speed_up;
     //public InputActionReference restart;
     //public InputActionReference pause;
     //public InputActionReference menu;
@@ -35,7 +36,6 @@ public class player_movement : MonoBehaviour
     {
         //paused = false; //starts the game unpaused
         //menuOpen = false; //starts the game with the settings menu closed
-        verticalSpeed = 0.000000001f;
     }
 
     // Update is called once per frame
@@ -90,14 +90,18 @@ public class player_movement : MonoBehaviour
         //{
         //menuOpen = false;
         //}
+        while (speed_up.action.triggered)
+        {
+            automaticSpeed *= 3;
+        }
     }
 
 
     void FixedUpdate()
     {
         //Help with code for setting animations comes from https://www.youtube.com/watch?v=AdQz2wStdLY&t=1s
-        rb.linearVelocity = new Vector2(_moveDirection.x * horizontalSpeed, _moveDirection.y * verticalSpeed);
-        transform.Translate(0, 1, 0 * verticalSpeed * Time.deltaTime);
+        rb.linearVelocity = new Vector2(_moveDirection.x * horizontalSpeed, _moveDirection.y * automaticSpeed);
+        //transform.Translate(0, 1, 0 * verticalSpeed * Time.deltaTime);
 
     }
 
