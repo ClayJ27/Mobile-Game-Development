@@ -20,5 +20,4 @@ public class Automatic_movement : MonoBehaviour
         rb.transform.Translate(new Vector2(0f, movementSpeed) * Time.deltaTime);
     }
 
-    //lol
 }
