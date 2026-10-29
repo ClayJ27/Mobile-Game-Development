@@ -11,7 +11,7 @@ public class Automatic_movement : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //movementSpeed = 3;
+        movementSpeed = 2;
     }
 
     // Update is called once per frame
@@ -19,4 +19,6 @@ public class Automatic_movement : MonoBehaviour
     {
         rb.transform.Translate(new Vector2(0f, movementSpeed) * Time.deltaTime);
     }
+
+    //lol
 }
