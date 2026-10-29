@@ -10,13 +10,11 @@ public class player_movement : MonoBehaviour
 {
     public float horizontalSpeed;
     public float verticalSpeed;
-    public float automaticSpeed;
     Rigidbody2D rb;
     float xInput;
     float yInput;
     //public Animator animations;
     public InputActionReference move;
-    public InputActionReference speed_up;
     //public InputActionReference restart;
     //public InputActionReference pause;
     //public InputActionReference menu;
@@ -33,9 +31,9 @@ public class player_movement : MonoBehaviour
     void Awake() => rb = GetComponent<Rigidbody2D>();
 
 
+
     void Start()
     {
-        automaticSpeed = 0.00000001f;
         //paused = false; //starts the game unpaused
         //menuOpen = false; //starts the game with the settings menu closed
     }
@@ -91,18 +89,13 @@ public class player_movement : MonoBehaviour
         //{
         //menuOpen = false;
         //}
-        while (speed_up.action.triggered)
-        {
-            automaticSpeed *= 3;
-        }
     }
 
 
     void FixedUpdate()
     {
         //Help with code for setting animations comes from https://www.youtube.com/watch?v=AdQz2wStdLY&t=1s
-        rb.linearVelocity = new Vector2(_moveDirection.x * horizontalSpeed, _moveDirection.y * automaticSpeed);
-        //transform.Translate(0, 1, 0 * automaticSpeed);
+        rb.linearVelocity = new Vector2(_moveDirection.x * horizontalSpeed, _moveDirection.y * verticalSpeed);
 
     }
 
