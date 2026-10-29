@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.EnhancedTouch;
@@ -34,6 +35,7 @@ public class player_movement : MonoBehaviour
 
     void Start()
     {
+        automaticSpeed = 0.00000001f;
         //paused = false; //starts the game unpaused
         //menuOpen = false; //starts the game with the settings menu closed
     }
@@ -41,7 +43,6 @@ public class player_movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        verticalSpeed = 0.000000001f;
         //if (paused == true)
         //{
         //pauseMenu.SetActive(true);
@@ -101,7 +102,7 @@ public class player_movement : MonoBehaviour
     {
         //Help with code for setting animations comes from https://www.youtube.com/watch?v=AdQz2wStdLY&t=1s
         rb.linearVelocity = new Vector2(_moveDirection.x * horizontalSpeed, _moveDirection.y * automaticSpeed);
-        //transform.Translate(0, 1, 0 * verticalSpeed * Time.deltaTime);
+        //transform.Translate(0, 1, 0 * automaticSpeed);
 
     }
 
