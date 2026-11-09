@@ -119,53 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &8212981 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1396080897233031861, guid: 3687bf5f691e8e34dbcfbb31b158902b, type: 3}
-  m_PrefabInstance: {fileID: 5812000846963667018}
-  m_PrefabAsset: {fileID: 0}
---- !u!50 &8212985
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8212981}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &8212989
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8212981}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f7868146bb02a94fa91c39ed47e580f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Automatic_movement
-  currentSpeed: 0
-  defaultSpeed: 0
-  speed_up: {fileID: 1120369429361536294, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
 --- !u!1 &77632597
 GameObject:
   m_ObjectHideFlags: 0
@@ -869,33 +822,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -9003887907228232540, guid: 3687bf5f691e8e34dbcfbb31b158902b, type: 3}
-      propertyPath: move
-      value: 
-      objectReference: {fileID: -1680190386980627800, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
-    - target: {fileID: -9003887907228232540, guid: 3687bf5f691e8e34dbcfbb31b158902b, type: 3}
-      propertyPath: speed_up
-      value: 
-      objectReference: {fileID: 1120369429361536294, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
-    - target: {fileID: -9003887907228232540, guid: 3687bf5f691e8e34dbcfbb31b158902b, type: 3}
-      propertyPath: verticalSpeed
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1396080897233031861, guid: 3687bf5f691e8e34dbcfbb31b158902b, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5288951566174969806, guid: 3687bf5f691e8e34dbcfbb31b158902b, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5288951566174969806, guid: 3687bf5f691e8e34dbcfbb31b158902b, type: 3}
-      propertyPath: m_Color.g
-      value: 0.9328972
-      objectReference: {fileID: 0}
-    - target: {fileID: 5288951566174969806, guid: 3687bf5f691e8e34dbcfbb31b158902b, type: 3}
-      propertyPath: m_Color.r
-      value: 0.3066038
       objectReference: {fileID: 0}
     - target: {fileID: 8578607876956021602, guid: 3687bf5f691e8e34dbcfbb31b158902b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -940,13 +869,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1396080897233031861, guid: 3687bf5f691e8e34dbcfbb31b158902b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8212985}
-    - targetCorrespondingSourceObject: {fileID: 1396080897233031861, guid: 3687bf5f691e8e34dbcfbb31b158902b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8212989}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3687bf5f691e8e34dbcfbb31b158902b, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
