@@ -9,18 +9,21 @@ public class SceneChanger : MonoBehaviour
 
     public void StartGame()
     {
+        Handheld.Vibrate();
         SceneManager.LoadScene(load_game); //Loads the test level
     }
 
 
     public void TitleScreen()
     {
+        Handheld.Vibrate();
         SceneManager.LoadScene(title_screen); //Loads the title screen
     }
 
 
     public void CreditsScreen()
     {
+        Handheld.Vibrate();
         SceneManager.LoadScene(credits_screen); //Loads the credits screen
     }
 
