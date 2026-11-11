@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class sceneChanger : MonoBehaviour
+public class SceneChanger : MonoBehaviour
 {
     [SerializeField] private string load_game = "TestLevel";
     [SerializeField] private string title_screen = "TitleScreen";
