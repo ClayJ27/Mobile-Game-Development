@@ -2387,6 +2387,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1865927800}
   m_CullTransparentMesh: 1
+--- !u!1 &1880531859
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1880531862}
+  - component: {fileID: 1880531861}
+  - component: {fileID: 1880531860}
+  - component: {fileID: 1880531863}
+  m_Layer: 0
+  m_Name: Platform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1880531860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880531859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c860f0b386742024a9f53c88a77067d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CMP5402.Week9.PlatformTestMenu
+  visible: 1
+  fontSize: 26
+--- !u!114 &1880531861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880531859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 427f0fe5b48f61f4085e7aad25eec54b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CMP5402.Week9.PlatformHub
+  ids: {fileID: 11400000, guid: 71f111108d297644b982ae54c7317ac0, type: 2}
+  silentSignInAtLaunch: 1
+  reachabilityPollSeconds: 5
+--- !u!4 &1880531862
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880531859}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 739.58765, y: 85.02698, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1880531863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880531859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bfe6bba805bde244952b0428fc66fa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ProgressStore
 --- !u!1001 &2136392763
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2474,3 +2549,4 @@ SceneRoots:
   - {fileID: 327193714}
   - {fileID: 644009170}
   - {fileID: 705381828}
+  - {fileID: 1880531862}
